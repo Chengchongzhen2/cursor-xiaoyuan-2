@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "code": "SUCCESS",
+  "message": "成功生成 2 个激活码",
+  "data": {
+    "count": 2,
+    "licenses": [
+      {
+        "activationCode": "TDI7-WNBW-JYFS-94A7-ZNUU-KA7Y",
+        "expiresAt": "2026-01-19T13:52:22.959Z"
+      },
+      {
+        "activationCode": "5KBT-MYFG-QMKH-60BG-E45Q-96DE",
+        "expiresAt": "2026-01-19T13:52:22.959Z"
+      }
+    ]
+  }
+}
