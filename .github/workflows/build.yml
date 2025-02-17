@@ -30,14 +30,14 @@ jobs:
 
       - name: Build EXE
         run: |
-          pyarmor gen wuneng.py
-          pyinstaller wuneng.spec
+          pyarmor gen xiaoyuan.py
+          pyinstaller xiaoyuan.spec
 
       - name: Upload Windows artifact
         uses: actions/upload-artifact@v4
         with:
-          name: wuneng-windows
-          path: dist/wuneng.exe
+          name: xiaoyuan-windows
+          path: dist/xiaoyuan.exe
 
   build-macos-arm64:
     runs-on: macos-latest
@@ -64,14 +64,14 @@ jobs:
 
       - name: Build MacOS ARM executable
         run: |
-          pyarmor gen wuneng.py
-          pyinstaller wuneng.spec
+          pyarmor gen xiaoyuan.py
+          pyinstaller xiaoyuan.spec
 
       - name: Upload MacOS ARM artifact
         uses: actions/upload-artifact@v4
         with:
-          name: wuneng-macos-arm64
-          path: dist/wuneng
+          name: xiaoyuan-macos-arm64
+          path: dist/xiaoyuan
 
   build-linux:
     runs-on: ubuntu-22.04
@@ -99,14 +99,14 @@ jobs:
 
       - name: Build Linux executable
         run: |
-          pyarmor gen wuneng.py
-          pyinstaller wuneng.spec
+          pyarmor gen xiaoyuan.py
+          pyinstaller xiaoyuan.spec
 
       - name: Upload Linux artifact
         uses: actions/upload-artifact@v4
         with:
-          name: wuneng-linux
-          path: dist/wuneng
+          name: xiaoyuan-linux
+          path: dist/xiaoyuan
 
   build-macos-intel:
     runs-on: macos-latest
@@ -134,10 +134,10 @@ jobs:
         env:
           TARGET_ARCH: 'x86_64'
         run: |
-          arch -x86_64 pyinstaller wuneng2.spec
+          arch -x86_64 pyinstaller xiaoyuan2.spec
 
       - name: Upload MacOS Intel artifact
         uses: actions/upload-artifact@v4
         with:
-          name: wuneng-macos-intel
-          path: dist/wuneng
+          name: xiaoyuan-macos-intel
+          path: dist/xiaoyuan

@@ -3,7 +3,7 @@
 block_cipher = None
 
 a = Analysis(
-    ['wuneng.py'],
+    ['xiaoyuan.py'],
     pathex=[],
     binaries=[],
     datas=[],
@@ -31,7 +31,7 @@ exe = EXE(
     a.zipfiles,
     a.datas,
     [],
-    name='wuneng',
+    name='xiaoyuan',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
@@ -44,4 +44,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    icon='F730221F54E2F0B5C7C5C64B74C2C9C2.ico',  # 添加这一行，指定图标文件路径
 ) 

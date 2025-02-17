@@ -1,3 +1,3 @@
-pyarmor gen wuneng.py       
+pyarmor gen xiaoyuan.py       
 
-pyinstaller wuneng.spec 
+pyinstaller xiaoyuan.spec 
