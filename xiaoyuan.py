@@ -35,7 +35,7 @@ class CursorAuthManager:
         }
         self.db_manager = DBAuthManager()
         self.config = self.load_config()
-        self.api_url = "http://cursor.codecheng.me/api"
+        self.api_url = "http://182.92.157.193:3000/api"
         self.machine_code = self.generate_machine_code()
 
     def setup_paths(self):
@@ -132,6 +132,7 @@ class CursorAuthManager:
                     else:
                         print(f"{EMOJI['INFO']} Token 有效期还剩 {remaining_days} 天")
                     return True
+
             return None
         except Exception as e:
             logging.error(f"检查 token 过期时间失败: {str(e)}")
@@ -518,7 +519,7 @@ def main():
     print_logo()
     try:
         # 退出cursor
-        ExitCursor()
+        # ExitCursor()
         # 输入选项1 是重置机器ID 输入选项2 是激活token
         print(f"{EMOJI['INFO']} 请选择操作:")
         print(f"1. 重置机器ID（解决 too many free 问题）")
