@@ -119,6 +119,11 @@ class CursorAuthManager:
                     expiry_info = data.get("data", {})
                     remaining_days = expiry_info.get("remainingDays")
                     is_expired = expiry_info.get("isExpired")
+                    expiry_date = expiry_info.get("expiryDate")
+
+                    if remaining_days is None or is_expired is None:
+                        logging.error("Token 过期信息不完整")
+                        return None
 
                     if is_expired:
                         print(
@@ -127,12 +132,14 @@ class CursorAuthManager:
                         return False
                     elif remaining_days <= 7:
                         print(
-                            f"{Fore.YELLOW}{EMOJI['WARNING']} Token 将在 {remaining_days} 天后过期{Style.RESET_ALL}"
+                            f"{Fore.YELLOW}{EMOJI['WARN']} Token 将在 {remaining_days} 天后过期 {Style.RESET_ALL}"
                         )
                     else:
                         print(f"{EMOJI['INFO']} Token 有效期还剩 {remaining_days} 天")
                     return True
-
+                else:
+                    print(f"{EMOJI['ERROR']} {data.get('message', '未知错误')}")
+                    return False
             return None
         except Exception as e:
             logging.error(f"检查 token 过期时间失败: {str(e)}")
@@ -520,10 +527,11 @@ def main():
     try:
         # 退出cursor
         # ExitCursor()
-        # 输入选项1 是重置机器ID 输入选项2 是激活token
+        # 输入选项1 是重置机器ID 输入选项2 是激活token 3. 重新激活账号
         print(f"{EMOJI['INFO']} 请选择操作:")
         print(f"1. 重置机器ID（解决 too many free 问题）")
         print(f"2. 刷新账号")
+        print(f"3. 重新激活账号")
         option = input(f"{EMOJI['INFO']} 请输入选项: ")
         auth_manager = CursorAuthManager()
         if option == "1":
