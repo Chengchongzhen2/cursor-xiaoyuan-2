@@ -36,8 +36,8 @@ jobs:
       - name: Upload Windows artifact
         uses: actions/upload-artifact@v4
         with:
-          name: xiaoyuan-windows
-          path: dist/xiaoyuan.exe
+          name: pikaqiu-windows
+          path: dist/pikaqiu.exe
 
   build-macos-arm64:
     runs-on: macos-latest
@@ -70,8 +70,8 @@ jobs:
       - name: Upload MacOS ARM artifact
         uses: actions/upload-artifact@v4
         with:
-          name: xiaoyuan-macos-arm64
-          path: dist/xiaoyuan
+          name: pikaqiu-macos-arm64
+          path: dist/pikaqiu
 
   build-linux:
     runs-on: ubuntu-22.04
@@ -105,8 +105,8 @@ jobs:
       - name: Upload Linux artifact
         uses: actions/upload-artifact@v4
         with:
-          name: xiaoyuan-linux
-          path: dist/xiaoyuan
+          name: pikaqiu-linux
+          path: dist/pikaqiu
 
   build-macos-intel:
     runs-on: macos-latest
@@ -139,5 +139,5 @@ jobs:
       - name: Upload MacOS Intel artifact
         uses: actions/upload-artifact@v4
         with:
-          name: xiaoyuan-macos-intel
-          path: dist/xiaoyuan
+          name: pikaqiu-macos-intel
+          path: dist/pikaqiu
