@@ -35,7 +35,7 @@ class CursorAuthManager:
         }
         self.db_manager = DBAuthManager()
         self.config = self.load_config()
-        self.api_url = "http://182.92.157.193:3000/api"
+        self.api_url = "http://localhost:3000/api"
         self.machine_code = self.generate_machine_code()
 
     def setup_paths(self):
